@@ -3,51 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contatti, orari di apertura e come raggiungere Al Ponte di Schiavonia a Forlì. Viale Salinatore 86. Prenota il tuo tavolo o ordina da asporto.">
-    <title>Contatti • Al Ponte di Schiavonia | Forlì</title>
-    
-    <meta property="og:title" content="Contatti - Al Ponte di Schiavonia">
-    <meta property="og:description" content="Vieni a trovarci in Viale Salinatore 86 a Forlì. Prenota il tuo tavolo o ordina con consegna a domicilio.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200">
-    <meta property="og:type" content="restaurant">
+    <meta name="description" content="Ordina online da Al Ponte di Schiavonia a Forlì. Menu completo con pizze personalizzabili, primi, secondi e bevande. Consegna a domicilio o ritiro in loco.">
+    <title>Ordina Online • Al Ponte di Schiavonia | Forlì</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Al Ponte di Schiavonia - Trattoria e Pizzeria",
-      "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Viale Salinatore 86",
-        "addressLocality": "Forlì",
-        "addressRegion": "FC",
-        "postalCode": "47121",
-        "addressCountry": "IT"
-      },
-      "telephone": "+393XXXXXXXXX",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "12:00",
-          "closes": "14:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "19:00",
-          "closes": "23:00"
-        }
-      ],
-      "acceptsReservations": "True"
-    }
-    </script>
     
     <style>
         :root {
@@ -56,68 +18,135 @@
             --text-main: #44403C; --text-muted: #78716C;
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
             --radius: 16px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--secondary); }
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-        
+        button { cursor: pointer; font-family: inherit; }
+
+        /* HEADER */
         header { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
         .logo img { height: 60px; width: auto; }
         .nav-links { display: flex; gap: 2rem; }
         .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-main); }
         .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-        .btn-prenota { background-color: var(--primary); color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; font-weight: 600; }
-        .btn-prenota:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
 
-        .hero-contacts { background: linear-gradient(rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.8)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 6rem 1.5rem; }
-        .hero-contacts h1 { font-size: 3.5rem; color: white; margin-bottom: 0.5rem; }
-        .hero-contacts p { font-size: 1.3rem; color: #E7E5E4; font-style: italic; font-family: 'Playfair Display', serif; }
+        /* HERO */
+        .hero-order { background: linear-gradient(rgba(28, 25, 23, 0.8), rgba(28, 25, 23, 0.8)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 4rem 1.5rem; }
+        .hero-order h1 { color: white; font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero-order p { color: #E7E5E4; font-size: 1.1rem; }
 
-        .contact-container { max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-        .contact-card { background: var(--bg-card); padding: 2rem; border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.04); box-shadow: var(--shadow-md); text-align: center; transition: all 0.3s ease; }
-        .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
-        .contact-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .contact-card h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-        .contact-card p { color: var(--text-muted); margin-bottom: 0.5rem; }
-        .contact-card a { color: var(--primary); font-weight: 600; font-size: 1.1rem; }
-        .contact-card a:hover { color: var(--primary-dark); }
+        /* LAYOUT PRINCIPALE */
+        .order-container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 380px; gap: 2rem; align-items: start; }
         
-        .hours-list { text-align: left; margin-top: 1rem; list-style: none; }
-        .hours-list li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed #E7E5E4; }
-        .hours-list li:last-child { border-bottom: none; }
-        .closed { color: var(--primary); font-weight: 600; }
+        /* MENU SECTION */
+        .category-tabs { display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 1rem; margin-bottom: 1.5rem; scrollbar-width: none; }
+        .category-tabs::-webkit-scrollbar { display: none; }
+        .tab-btn { background: white; border: 1px solid #E7E5E4; padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; color: var(--text-main); white-space: nowrap; transition: all 0.3s; }
+        .tab-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .tab-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
 
-        .map-section { text-align: center; margin-bottom: 4rem; }
-        .map-section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-        .map-container { width: 100%; height: 400px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
-        .map-container iframe { width: 100%; height: 100%; border: 0; }
+        .menu-section { display: none; }
+        .menu-section.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .cta-box { background-color: var(--secondary); color: white; text-align: center; padding: 3rem 2rem; border-radius: var(--radius); margin-bottom: 4rem; }
-        .cta-box h2 { color: white; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
-        .cta-box p { color: #A8A29E; margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .btn-whatsapp-large { display: inline-flex; align-items: center; gap: 0.75rem; background-color: #25D366; color: white; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); }
-        .btn-whatsapp-large:hover { background-color: #128C7E; transform: translateY(-2px); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .product-card { background: var(--bg-card); border-radius: var(--radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.04); box-shadow: var(--shadow-md); transition: all 0.3s; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .product-name { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--secondary); }
+        .product-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1; font-style: italic; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; gap: 0.5rem; }
+        .product-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+        
+        .btn-group { display: flex; gap: 0.5rem; }
+        .btn-add { background: var(--secondary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+        .btn-add:hover { background: var(--primary); }
+        .btn-customize { background: transparent; color: var(--text-muted); border: 1px solid #E7E5E4; padding: 0.5rem; border-radius: 8px; transition: all 0.2s; }
+        .btn-customize:hover { border-color: var(--primary); color: var(--primary); }
 
-        footer { background-color: #0C0A09; color: #78716C; text-align: center; padding: 2rem 1.5rem; font-size: 0.85rem; }
+        /* CARRELLO SIDEBAR */
+        .cart-sidebar { background: var(--bg-card); border-radius: var(--radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.04); box-shadow: var(--shadow-lg); position: sticky; top: 100px; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--bg-body); }
+        .cart-header h3 { font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem; }
+        .cart-badge { background: var(--primary); color: white; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 10px; font-family: 'Inter', sans-serif; }
+        
+        .cart-items { max-height: 300px; overflow-y: auto; margin-bottom: 1.5rem; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px dashed #E7E5E4; }
+        .cart-item-info { flex: 1; }
+        .cart-item-name { font-weight: 600; font-size: 0.9rem; }
+        .cart-item-details { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin-top: 0.2rem; }
+        .cart-item-price { font-size: 0.85rem; color: var(--text-muted); }
+        .cart-item-controls { display: flex; align-items: center; gap: 0.5rem; }
+        .qty-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #E7E5E4; background: white; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-main); transition: all 0.2s; }
+        .qty-btn:hover { background: var(--bg-body); border-color: var(--primary); color: var(--primary); }
+        .qty-value { font-weight: 600; min-width: 20px; text-align: center; }
+
+        .cart-empty { text-align: center; color: var(--text-muted); padding: 2rem 0; font-style: italic; }
+
+        .cart-total { display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; padding-top: 1rem; border-top: 2px solid var(--secondary); }
+        .cart-total span:last-child { color: var(--primary); }
+
+        /* FORM CHECKOUT */
+        .checkout-form { display: flex; flex-direction: column; gap: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text-main); }
+        .form-group input, .form-group select, .form-group textarea { padding: 0.75rem; border: 1px solid #E7E5E4; border-radius: 8px; font-family: inherit; font-size: 0.9rem; transition: border 0.2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+        
+        .radio-group { display: flex; gap: 1rem; }
+        .radio-option { flex: 1; }
+        .radio-option input { display: none; }
+        .radio-option label { display: block; padding: 0.75rem; text-align: center; border: 1px solid #E7E5E4; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+        .radio-option input:checked + label { background: var(--primary); color: white; border-color: var(--primary); }
+
+        .btn-whatsapp-order { background: #25D366; color: white; border: none; padding: 1rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem; transition: all 0.3s; margin-top: 1rem; }
+        .btn-whatsapp-order:hover { background: #128C7E; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
+        .btn-whatsapp-order:disabled { background: #9CA3AF; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        /* MODAL PERSONALIZZA */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: white; width: 90%; max-width: 500px; border-radius: var(--radius); padding: 2rem; max-height: 90vh; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .modal-title { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .close-modal { background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; }
+        
+        .customization-section { margin-bottom: 1.5rem; }
+        .customization-title { font-weight: 600; margin-bottom: 0.75rem; color: var(--text-main); display: block; }
+        .option-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .option-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; border: 1px solid #E7E5E4; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .option-item:hover { border-color: var(--primary); background: #FEF2F2; }
+        .option-item input { accent-color: var(--primary); width: 18px; height: 18px; }
+        .option-label { flex: 1; font-size: 0.95rem; }
+        .option-price { font-weight: 600; color: var(--primary); font-size: 0.9rem; }
+
+        .modal-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #E7E5E4; }
+        .modal-total { font-size: 1.2rem; font-weight: 700; color: var(--secondary); }
+        .btn-confirm-custom { background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 1rem; }
+        .btn-confirm-custom:hover { background: var(--primary-dark); }
+
+        /* MOBILE CART TOGGLE */
+        .mobile-cart-toggle { display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; padding: 1rem 1.5rem; border-radius: 50px; font-weight: 700; box-shadow: var(--shadow-lg); z-index: 999; align-items: center; gap: 0.75rem; border: none; }
+        
+        footer { background-color: #0C0A09; color: #78716C; text-align: center; padding: 2rem 1.5rem; font-size: 0.85rem; margin-top: 4rem; }
         footer a { color: #A8A29E; text-decoration: underline; }
 
-        .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; border: none; font-size: 1.2rem; }
-        .scroll-top.visible { opacity: 1; visibility: visible; }
-        .scroll-top:hover { background-color: var(--primary-dark); transform: translateY(-3px); }
-
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .order-container { grid-template-columns: 1fr; }
+            .cart-sidebar { position: fixed; bottom: 0; left: 0; right: 0; top: auto; border-radius: 24px 24px 0 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); transform: translateY(100%); transition: transform 0.3s ease; z-index: 1001; max-height: 85vh; overflow-y: auto; }
+            .cart-sidebar.open { transform: translateY(0); }
+            .mobile-cart-toggle { display: flex; }
             .nav-links { display: none; }
-            .hero-contacts h1 { font-size: 2.2rem; }
-            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo"><img src="logo.png" alt="Al Ponte di Schiavonia Logo"></a>
@@ -125,79 +154,509 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="ordina.html">Ordina Online</a></li>
-                    <li><a href="contatti.html" class="active">Contatti</a></li>
-                    <li><a href="https://wa.me/393XXXXXXXXX?text=Salve%2C%20vorrei%20prenotare%20un%20tavolo" class="btn-prenota">Prenota</a></li>
+                    <li><a href="ordina.html" class="active">Ordina Online</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero-contacts">
-        <h1>Contatti</h1>
-        <p>Siamo a Forlì • Dal 1978</p>
+    <section class="hero-order">
+        <h1>Ordina Online</h1>
+        <p>Componi il tuo ordine e ricevilo a casa o ritiralo in loco. Zero commissioni.</p>
     </section>
 
-    <main class="contact-container">
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <h3>Dove Siamo</h3>
-                <p><strong>Viale Salinatore 86</strong></p>
-                <p>47121 Forlì (FC)</p>
-                <a href="https://maps.google.com/?q=Viale+Salinatore+86+Forli" target="_blank">Apri in Google Maps →</a>
+    <main class="order-container">
+        <!-- SEZIONE MENU -->
+        <div class="menu-area">
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="showCategory('pizze')">🍕 Pizze</button>
+                <button class="tab-btn" onclick="showCategory('antipasti')">🥗 Antipasti</button>
+                <button class="tab-btn" onclick="showCategory('primi')">🍝 Primi</button>
+                <button class="tab-btn" onclick="showCategory('secondi')">🥩 Secondi</button>
+                <button class="tab-btn" onclick="showCategory('bevande')">🍺 Bevande</button>
+                <button class="tab-btn" onclick="showCategory('dessert')">🍰 Dessert</button>
             </div>
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-                <h3>Chiamaci o Scrivici</h3>
-                <p>Per prenotazioni o ordini:</p>
-                <a href="tel:+393XXXXXXXXX">+39 393 XXXXXXXX</a>
-                <p style="margin-top: 1rem;">
-                    <a href="https://wa.me/393XXXXXXXXX" target="_blank" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
-                </p>
+
+            <!-- PIZZE -->
+            <div id="pizze" class="menu-section active">
+                <div class="product-grid" id="grid-pizze"></div>
             </div>
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fa-regular fa-clock"></i></div>
-                <h3>Orari di Apertura</h3>
-                <ul class="hours-list">
-                    <li><span>Lunedì</span> <span class="closed">Chiuso</span></li>
-                    <li><span>Martedì – Domenica</span> <span>12:00 – 14:30</span></li>
-                    <li><span>Martedì – Domenica</span> <span>19:00 – 23:00</span></li>
-                </ul>
+            <!-- ANTIPASTI -->
+            <div id="antipasti" class="menu-section">
+                <div class="product-grid" id="grid-antipasti"></div>
+            </div>
+            <!-- PRIMI -->
+            <div id="primi" class="menu-section">
+                <div class="product-grid" id="grid-primi"></div>
+            </div>
+            <!-- SECONDI -->
+            <div id="secondi" class="menu-section">
+                <div class="product-grid" id="grid-secondi"></div>
+            </div>
+            <!-- BEVANDE -->
+            <div id="bevande" class="menu-section">
+                <div class="product-grid" id="grid-bevande"></div>
+            </div>
+            <!-- DESSERT -->
+            <div id="dessert" class="menu-section">
+                <div class="product-grid" id="grid-dessert"></div>
             </div>
         </div>
 
-        <section class="map-section">
-            <h2>Come Raggiungerci</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2859.5!2d12.0408666!3d44.222008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132b57f32bed8949%3A0x6b55b33505a6874!2sViale%20Salinatore%2C%2086%2C%2047121%20Forl%C3%AC%20FC!5e0!3m2!1sit!2sit!4v1710000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- SEZIONE CARRELLO -->
+        <aside class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3><i class="fa-solid fa-basket-shopping"></i> Il tuo ordine <span class="cart-badge" id="cartCount">0</span></h3>
+                <button onclick="toggleCartMobile()" style="background:none; border:none; font-size:1.2rem; display:none;" class="close-cart-mobile"><i class="fa-solid fa-xmark"></i></button>
             </div>
-        </section>
+            
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">Il carrello è vuoto. Aggiungi qualcosa di buono!</div>
+            </div>
 
-        <section class="cta-box">
-            <h2>Hai già scelto cosa mangiare?</h2>
-            <p>Prenota il tuo tavolo o ordina da asporto direttamente con noi, senza commissioni.</p>
-            <a href="https://wa.me/393XXXXXXXXX?text=Salve%2C%20vorrei%20prenotare%20un%20tavolo" class="btn-whatsapp-large">
-                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Prenota un tavolo via WhatsApp
-            </a>
-        </section>
+            <div class="cart-total">
+                <span>Totale</span>
+                <span id="cartTotal">0,00 €</span>
+            </div>
+
+            <form class="checkout-form" id="checkoutForm" onsubmit="sendWhatsAppOrder(event)">
+                <div class="form-group">
+                    <label>Nome e Cognome *</label>
+                    <input type="text" id="customerName" required placeholder="Mario Rossi">
+                </div>
+                <div class="form-group">
+                    <label>Numero di Telefono *</label>
+                    <input type="tel" id="customerPhone" required placeholder="333 1234567">
+                </div>
+                
+                <div class="form-group">
+                    <label>Modalità *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="deliveryMode" id="modePickup" value="Ritiro in loco" checked onchange="toggleAddressField()">
+                            <label for="modePickup">🏠 Ritiro</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="deliveryMode" id="modeDelivery" value="Consegna a domicilio" onchange="toggleAddressField()">
+                            <label for="modeDelivery">🛵 Consegna</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" id="addressGroup" style="display: none;">
+                    <label>Indirizzo di consegna *</label>
+                    <input type="text" id="customerAddress" placeholder="Via, numero civico, Forlì">
+                </div>
+
+                <div class="form-group">
+                    <label>Note per l'ordine (opzionale)</label>
+                    <textarea id="orderNotes" rows="2" placeholder="Es. Citofono rotto, ecc."></textarea>
+                </div>
+
+                <button type="submit" class="btn-whatsapp-order" id="submitBtn" disabled>
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Invia Ordine via WhatsApp
+                </button>
+                <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">
+                    Cliccando, verrai reindirizzato a WhatsApp con il riepilogo del tuo ordine.
+                </p>
+            </form>
+        </aside>
     </main>
+
+    <!-- MODAL PERSONALIZZA PIZZA -->
+    <div class="modal-overlay" id="customizeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalPizzaName">Personalizza Pizza</h3>
+                <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="customization-section">
+                <span class="customization-title">Rimuovi Ingredienti:</span>
+                <div class="option-list" id="removeOptions">
+                    <!-- Generato via JS -->
+                </div>
+            </div>
+
+            <div class="customization-section">
+                <span class="customization-title">Aggiungi Extra:</span>
+                <div class="option-list" id="addOptions">
+                    <!-- Generato via JS -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="modal-total">Totale: <span id="modalTotalPrice">0,00 €</span></div>
+                <button class="btn-confirm-custom" onclick="confirmCustomization()">Aggiungi al Carrello</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PULSANTE MOBILE PER APRIRE CARRELLO -->
+    <button class="mobile-cart-toggle" onclick="toggleCartMobile()">
+        <i class="fa-solid fa-basket-shopping"></i> 
+        <span id="mobileCartTotal">0,00 €</span>
+    </button>
 
     <footer>
         <p>© 2026 Al Ponte di Schiavonia • Trattoria e Pizzeria • Forlì</p>
-        <p style="margin-top: 0.5rem;">Tutti i diritti riservati | <a href="index.html">Torna alla Home</a> | <a href="menu.html">Consulta il Menu</a></p>
+        <p style="margin-top: 0.5rem;">Tutti i diritti riservati | <a href="index.html">Home</a> | <a href="contatti.html">Contatti</a></p>
     </footer>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Torna in cima"><i class="fa-solid fa-arrow-up"></i></button>
-
     <script>
-        const scrollTopBtn = document.getElementById('scrollTop');
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+        // --- DATI COMPLETI DEL MENU ---
+        const menuData = {
+            pizze: [
+                { id: 'p1', name: 'Marinara', desc: 'Pomodoro, Prezzemolo, Aglio', price: 6.00 },
+                { id: 'p2', name: 'Margherita', desc: 'Pomodoro, Fior di Latte', price: 7.00 },
+                { id: 'p3', name: 'Biancaneve', desc: 'Solo Fior di Latte', price: 7.00 },
+                { id: 'p4', name: 'Napoli', desc: 'Fior di Latte, Pomodoro, Acciughe, Origano', price: 8.00 },
+                { id: 'p5', name: 'Romana', desc: 'Fior di Latte, Pomodoro, Acciughe, Capperi', price: 8.50 },
+                { id: 'p6', name: 'Diavola', desc: 'Capperi, Fior di Latte, Pomodoro, Salame Piccante, Acciughe', price: 9.00 },
+                { id: 'p7', name: 'Trevisana', desc: 'Fior di Latte, Pomodoro, Radicchio, Salsiccia', price: 9.00 },
+                { id: 'p8', name: 'Ghiotta', desc: 'Fior di Latte, Pomodoro, Scamorza, Salame Piccante, Cipolla', price: 9.50 },
+                { id: 'p9', name: 'Parmigiana', desc: 'Fior di Latte, Pomodoro, Melanzane, Grana Padano', price: 9.50 },
+                { id: 'p10', name: 'Americana', desc: 'Fior di Latte, Pomodoro, Wurstel, Patate Fritte', price: 10.00 },
+                { id: 'p11', name: 'Bomba', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Fagioli, Salsiccia, Cipolla', price: 10.00 },
+                { id: 'p12', name: 'Mandolino', desc: 'Mozzarella di Bufala DOP, Pomodoro, Olive Taggiasche, Origano', price: 10.00 },
+                { id: 'p13', name: 'Saporita', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Salsiccia, Wurstel', price: 10.00 },
+                { id: 'p14', name: 'Vegetariana', desc: 'Fior di Latte, Pomodoro, Grana Padano, Verdure Fresche', price: 10.00 },
+                { id: 'p15', name: 'Verdure Grigliate', desc: 'Fior di Latte, Pomodoro, Peperoni, Zucchine, Melanzane', price: 9.00 },
+                { id: 'p16', name: 'Vigliacca', desc: 'Fior di Latte, Pomodoro, Gorgonzola, Pancetta, Spinaci', price: 10.00 },
+                { id: 'p17', name: 'Vulcano', desc: 'Fior di Latte, Pomodoro, Wurstel, Salame Piccante, Funghi Champignon, Pancetta', price: 10.00 },
+                { id: 'p18', name: 'Boscaiola', desc: 'Fior di Latte, Pomodoro, Funghi Porcini, Pancetta, Funghi Champignon', price: 10.50 },
+                { id: 'p19', name: 'Messicana', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Pancetta, Fagioli, Peperoncino', price: 10.50 },
+                { id: 'p20', name: 'Raffinata', desc: 'Fior di Latte, Pomodoro, Prosciutto Crudo di Parma, Grana Padano, Rucola', price: 10.00 },
+                { id: 'p21', name: 'Rustica', desc: 'Fior di Latte, Pomodoro, Gorgonzola, Funghi Porcini, Rucola', price: 10.50 },
+                { id: 'p22', name: 'Stravagante', desc: 'Specialità dello chef', price: 10.50 },
+                { id: 'p23', name: 'Tirolese', desc: 'Specialità dello chef', price: 11.00 },
+                { id: 'p24', name: 'Fuoco del Vesuvio', desc: 'Fior di Latte, Pomodoro, Peperoni, Rucola, Salame Piccante, Olive Taggiasche', price: 11.00 },
+                { id: 'p25', name: 'Sfiziosa', desc: 'Fior di Latte, Pomodoro, Scamorza, Funghi Porcini, Speck', price: 11.00 },
+                { id: 'p26', name: 'Viking', desc: 'Fior di Latte, Pomodoro, Funghi Porcini, Salsiccia, Cipolla, Olive Taggiasche', price: 11.50 },
+                { id: 'p27', name: 'Capricciosa', desc: 'Pomodoro, Prosciutto Cotto, Fior di Latte, Olive Taggiasche, Carciofi, Salsiccia, Funghi', price: 12.00 },
+                { id: 'p28', name: 'Misteriosa', desc: 'Fior di Latte, Pomodoro, Salsiccia, Grana Padano, Rucola, Funghi Porcini, Zucchine', price: 12.00 },
+                { id: 'p29', name: 'Ricca', desc: 'Fior di Latte, Mozzarella di Bufala, Gorgonzola, Scamorza, Prosciutto Crudo di Parma', price: 12.50 },
+                { id: 'p30', name: 'Aromatica', desc: 'Mozzarella Fiordilatte, Burrata, Prosciutto Crudo di Parma', price: 13.00 },
+                { id: 'p31', name: 'Biscara', desc: 'Mozzarella di Bufala DOP, Pomodoro, Funghi Porcini, Salsiccia', price: 11.00 },
+                { id: 'p32', name: 'Delicius', desc: 'Mozzarella Fiordilatte, Burrata, Acciughe del Cantabrico, Olive Taggiasche', price: 14.00 }
+            ],
+            antipasti: [
+                { id: 'a1', name: 'Tartare di Controfiletto Irlandese', desc: 'Manzo irlandese, frutta fresca, senape al miele', price: 12.00 },
+                { id: 'a2', name: 'Acciughe del Mar Cantabrico e Burrata', desc: 'Con pane croccante e burro', price: 11.00 },
+                { id: 'a3', name: 'Bruciatini', desc: 'Radicchio fresco, pancetta croccante, aceto balsamico', price: 8.00 },
+                { id: 'a4', name: 'Flan di Zucca e Porri', desc: 'Su crema di Gorgonzola', price: 8.00 },
+                { id: 'a5', name: 'Selezione di Affettati Tipici', desc: 'Salame, Prosciutto di Parma, Pancetta, Mortadella, Piadina', price: 10.00 },
+                { id: 'a6', name: 'Degustazione di Formaggi DOP', desc: 'Fossa di Sogliano, Squacquerone, Scoparolo, Pecorino, Piadina', price: 10.00 },
+                { id: 'a7', name: 'Cozze alla Tarantina', desc: 'Pomodoro, aglio, prezzemolo, peperoncino', price: 12.00 }
+            ],
+            primi: [
+                { id: 'pr1', name: 'Tagliatelle al Ragù della Nonna Franca', desc: 'Fatte in casa con ragù lento di carne, soffritto e pomodoro', price: 10.00 },
+                { id: 'pr2', name: 'Cappelletti al Crudo di Parma e Pesto di Rucola', desc: 'Pasta ripiena tipica con prosciutto crudo e ciliegini', price: 12.00 },
+                { id: 'pr3', name: 'Cappelletti al Ragù della Nonna Franca', desc: 'Pasta ripiena tipica romagnola servita con ragù', price: 12.00 },
+                { id: 'pr4', name: 'Tortelli di Ricotta e Spinaci', desc: 'Con guanciale croccante, salvia e crema di burro chiarificato', price: 12.00 },
+                { id: 'pr5', name: 'Strozzapreti ai Porcini', desc: 'Con scaglie di Pecorino di Fossa di Sogliano', price: 14.00 },
+                { id: 'pr6', name: 'Gnocchetti alle Vongole', desc: 'Su crema di zucchine e pomodori datterini', price: 14.00 },
+                { id: 'pr7', name: 'Tagliolini allo Scoglio', desc: 'Frutti di mare misti: seppia, gamberi, polpo, cozze, vongole', price: 17.00 },
+                { id: 'pr8', name: 'Lasagne della Tradizione Romagnola', desc: 'Sfoglia all\'uovo, ragù di carne, besciamella e Parmigiano', price: 12.00 }
+            ],
+            secondi: [
+                { id: 's1', name: 'Galletto a Bassa Temperatura agli Agrumi', desc: 'Con spinaci al vapore e riduzione alla soia', price: 15.00 },
+                { id: 's2', name: 'Tagliata di Controfiletto "Argentinian"', desc: 'Al sale di Cervia con patate rustiche al forno', price: 22.00 },
+                { id: 's3', name: 'Baccalà Mantecato', desc: 'Su crema di cipolle al nero di seppia e pesto di pomodori secchi', price: 15.00 },
+                { id: 's4', name: 'Filetto di Manzo "Angus" ai Porcini', desc: 'Preparato a bassa temperatura', price: 24.00 },
+                { id: 's5', name: 'Filetto di Manzo "Angus" al Pepe Rosa', desc: 'Con cognac', price: 19.00 },
+                { id: 's6', name: 'Polpo Cotto a Bassa Temperatura', desc: 'Su crema di patate e gocce di prezzemolo', price: 15.00 },
+                { id: 's7', name: 'Fritto di Mare e Verdure Croccanti', desc: 'Mazzancolle, calamari, alici, melanzane e zucchine', price: 16.00 },
+                { id: 's8', name: 'Grigliata di Carne con Patate al Forno', desc: 'Salsiccia, petto di pollo, pancetta, lonza', price: 18.00 },
+                { id: 's9', name: 'Cotoletta alla Milanese', desc: 'Con patate fritte', price: 15.00 }
+            ],
+            bevande: [
+                { id: 'b1', name: 'Acqua Naturale Pejo', desc: '75 cl in vetro', price: 3.00 },
+                { id: 'b2', name: 'Acqua Gassata Pejo', desc: '75 cl in vetro', price: 3.00 },
+                { id: 'b3', name: 'Coca Cola', desc: '33 cl in vetro', price: 3.50 },
+                { id: 'b4', name: 'Fanta', desc: '45 cl in PET', price: 3.50 },
+                { id: 'b5', name: 'Coca Cola', desc: '1 Litro in vetro', price: 8.00 },
+                { id: 'b6', name: 'Birra Beck\'s', desc: '33 cl', price: 4.00 },
+                { id: 'b7', name: 'Birra Ceres', desc: '33 cl • 7.7% Vol', price: 4.50 },
+                { id: 'b8', name: 'Birra Moretti Filtrata a Freddo', desc: '55 cl • 4.3% Vol', price: 5.00 },
+                { id: 'b9', name: 'Birra Ichnusa non Filtrata', desc: '50 cl', price: 5.00 },
+                { id: 'b10', name: 'Birra Messina', desc: '50 cl Bionda Italiana', price: 5.00 },
+                { id: 'b11', name: 'Birra Erdinger', desc: '50 cl • 5.3% Vol', price: 5.00 },
+                { id: 'b12', name: 'Birra Paulaner', desc: '50 cl', price: 5.00 },
+                { id: 'b13', name: 'Birra Leffe Blonde', desc: '75 cl • 6.6% Vol', price: 10.00 },
+                { id: 'b14', name: 'Birra Leffe Rouge', desc: '75 cl • 6.6% Vol', price: 10.00 }
+            ],
+            dessert: [
+                { id: 'd1', name: 'Mascarpone', desc: 'Mascarpone, Uova, Zucchero', price: 5.00 },
+                { id: 'd2', name: 'Tiramisù', desc: 'Il classico della tradizione', price: 5.00 },
+                { id: 'd3', name: 'Crema Catalana', desc: 'Cremosa e delicata', price: 5.00 },
+                { id: 'd4', name: 'Tortino di Cioccolato', desc: 'Con cuore fondente', price: 5.00 }
+            ]
+        };
+
+        // Extra disponibili per personalizzazione
+        const extras = [
+            { id: 'ex1', name: 'Extra Mozzarella', price: 1.50 },
+            { id: 'ex2', name: 'Extra Bufala', price: 2.00 },
+            { id: 'ex3', name: 'Wurstel', price: 1.00 },
+            { id: 'ex4', name: 'Patatine Fritte', price: 1.00 },
+            { id: 'ex5', name: 'Funghi Porcini', price: 2.00 },
+            { id: 'ex6', name: 'Speck', price: 1.50 },
+            { id: 'ex7', name: 'Rucola', price: 0.50 },
+            { id: 'ex8', name: 'Grana Padano', price: 1.00 }
+        ];
+
+        let cart = [];
+        let currentCustomizingPizza = null;
+        let selectedRemovals = [];
+        let selectedExtras = [];
+        // ⚠️ SOSTITUISCI QUESTO NUMERO CON IL TUO NUMERO WHATSAPP REALE
+        const WHATSAPP_NUMBER = "393XXXXXXXXX"; 
+
+        // --- INIZIALIZZAZIONE ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMenu();
         });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+
+        function renderMenu() {
+            for (const [category, items] of Object.entries(menuData)) {
+                const grid = document.getElementById(`grid-${category}`);
+                if(grid) {
+                    grid.innerHTML = items.map(item => {
+                        const isPizza = category === 'pizze';
+                        return `
+                        <div class="product-card">
+                            <div class="product-name">${item.name}</div>
+                            <div class="product-desc">${item.desc}</div>
+                            <div class="product-footer">
+                                <span class="product-price">${item.price.toFixed(2).replace('.', ',')} €</span>
+                                <div class="btn-group">
+                                    ${isPizza ? `<button class="btn-customize" onclick="openCustomizeModal('${item.id}')"><i class="fa-solid fa-sliders"></i></button>` : ''}
+                                    <button class="btn-add" onclick="addToCart('${item.id}', '${item.name}', ${item.price})">
+                                        <i class="fa-solid fa-plus"></i> ${isPizza ? 'Aggiungi' : 'Aggiungi'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `}).join('');
+                }
+            }
+        }
+
+        function showCategory(category) {
+            document.querySelectorAll('.menu-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(category).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // --- LOGICA PERSONALIZZAZIONE ---
+        function openCustomizeModal(pizzaId) {
+            const pizza = menuData.pizze.find(p => p.id === pizzaId);
+            if (!pizza) return;
+
+            currentCustomizingPizza = pizza;
+            selectedRemovals = [];
+            selectedExtras = [];
+
+            document.getElementById('modalPizzaName').textContent = `Personalizza: ${pizza.name}`;
+            
+            // Genera opzioni rimozione (simulato dagli ingredienti nella descrizione)
+            const ingredients = pizza.desc.split(',').map(i => i.trim());
+            const removeContainer = document.getElementById('removeOptions');
+            removeContainer.innerHTML = ingredients.map(ing => `
+                <label class="option-item">
+                    <input type="checkbox" value="${ing}" onchange="updateModalTotal()">
+                    <span class="option-label">Senza ${ing}</span>
+                </label>
+            `).join('');
+
+            // Genera opzioni extra
+            const addContainer = document.getElementById('addOptions');
+            addContainer.innerHTML = extras.map(extra => `
+                <label class="option-item">
+                    <input type="checkbox" value="${extra.id}" data-price="${extra.price}" data-name="${extra.name}" onchange="updateModalTotal()">
+                    <span class="option-label">+ ${extra.name}</span>
+                    <span class="option-price">+${extra.price.toFixed(2).replace('.', ',')} €</span>
+                </label>
+            `).join('');
+
+            updateModalTotal();
+            document.getElementById('customizeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('customizeModal').classList.remove('active');
+            currentCustomizingPizza = null;
+        }
+
+        function updateModalTotal() {
+            if (!currentCustomizingPizza) return;
+
+            // Aggiorna selezioni
+            selectedRemovals = Array.from(document.querySelectorAll('#removeOptions input:checked')).map(cb => cb.value);
+            selectedExtras = Array.from(document.querySelectorAll('#addOptions input:checked')).map(cb => ({
+                id: cb.value,
+                name: cb.dataset.name,
+                price: parseFloat(cb.dataset.price)
+            }));
+
+            // Calcola prezzo
+            let total = currentCustomizingPizza.price;
+            selectedExtras.forEach(extra => total += extra.price);
+
+            document.getElementById('modalTotalPrice').textContent = total.toFixed(2).replace('.', ',') + ' €';
+        }
+
+        function confirmCustomization() {
+            if (!currentCustomizingPizza) return;
+
+            let finalPrice = currentCustomizingPizza.price;
+            let details = [];
+
+            if (selectedRemovals.length > 0) {
+                details.push(`Senza: ${selectedRemovals.join(', ')}`);
+            }
+            if (selectedExtras.length > 0) {
+                selectedExtras.forEach(extra => {
+                    finalPrice += extra.price;
+                    details.push(`Extra: ${extra.name}`);
+                });
+            }
+
+            const itemName = details.length > 0 
+                ? `${currentCustomizingPizza.name} (${details.join('; ')})` 
+                : currentCustomizingPizza.name;
+
+            addToCart(currentCustomizingPizza.id + '_custom', itemName, finalPrice);
+            closeModal();
+        }
+
+        // --- LOGICA CARRELLO ---
+        function addToCart(id, name, price) {
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ id, name, price, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateQty(id, change) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.qty += change;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartCountEl = document.getElementById('cartCount');
+            const cartTotalEl = document.getElementById('cartTotal');
+            const mobileCartTotalEl = document.getElementById('mobileCartTotal');
+            const submitBtn = document.getElementById('submitBtn');
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            cartCountEl.textContent = totalQty;
+            cartTotalEl.textContent = totalPrice.toFixed(2).replace('.', ',') + ' €';
+            mobileCartTotalEl.textContent = totalPrice.toFixed(2).replace('.', ',') + ' €';
+            submitBtn.disabled = totalQty === 0;
+
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<div class="cart-empty">Il carrello è vuoto. Aggiungi qualcosa di buono!</div>';
+                return;
+            }
+
+            cartItemsEl.innerHTML = cart.map(item => {
+                // Estrae dettagli se presenti nel nome (es. "Margherita (Senza: ...)")
+                const nameParts = item.name.split('(');
+                const displayName = nameParts[0];
+                const details = nameParts[1] ? '(' + nameParts[1] : '';
+
+                return `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${displayName}</div>
+                        ${details ? `<div class="cart-item-details">${details}</div>` : ''}
+                        <div class="cart-item-price">${item.price.toFixed(2).replace('.', ',')} € cad.</div>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button class="qty-btn" onclick="updateQty('${item.id}', -1)">-</button>
+                        <span class="qty-value">${item.qty}</span>
+                        <button class="qty-btn" onclick="updateQty('${item.id}', 1)">+</button>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        // --- CHECKOUT E WHATSAPP ---
+        function toggleAddressField() {
+            const isDelivery = document.getElementById('modeDelivery').checked;
+            const addressGroup = document.getElementById('addressGroup');
+            const addressInput = document.getElementById('customerAddress');
+            
+            if (isDelivery) {
+                addressGroup.style.display = 'flex';
+                addressInput.required = true;
+            } else {
+                addressGroup.style.display = 'none';
+                addressInput.required = false;
+                addressInput.value = '';
+            }
+        }
+
+        function sendWhatsAppOrder(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const mode = document.querySelector('input[name="deliveryMode"]:checked').value;
+            const address = document.getElementById('customerAddress').value;
+            const notes = document.getElementById('orderNotes').value;
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0).toFixed(2).replace('.', ',');
+
+            let message = `Ciao! Vorrei effettuare un nuovo ordine:%0A%0A`;
+            message += `👤 *Nome:* ${name}%0A`;
+            message += `📞 *Telefono:* ${phone}%0A`;
+            message += `🛵 *Modalità:* ${mode}%0A`;
+            if (mode === 'Consegna a domicilio') {
+                message += `📍 *Indirizzo:* ${address}%0A`;
+            }
+            message += `%0A🛒 *ORDINE:*%0A`;
+            
+            cart.forEach(item => {
+                const itemTotal = (item.price * item.qty).toFixed(2).replace('.', ',');
+                message += `• ${item.qty}x ${item.name} (${itemTotal} €)%0A`;
+            });
+            
+            message += `%0A💰 *TOTALE: ${total} €*%0A`;
+            
+            if (notes.trim() !== '') {
+                message += `%0A📝 *Note:* ${notes}%0A`;
+            }
+
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // --- MOBILE CART TOGGLE ---
+        function toggleCartMobile() {
+            const sidebar = document.getElementById('cartSidebar');
+            sidebar.classList.toggle('open');
+            
+            const closeBtn = document.querySelector('.close-cart-mobile');
+            if (window.innerWidth <= 900) {
+                closeBtn.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+            }
+        }
     </script>
 </body>
 </html>
