@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ordina online da Al Ponte di Schiavonia a Forlì. Pizze al forno a legna, primi piatti e contorni. Consegna a domicilio o ritiro in loco, zero commissioni.">
+    <meta name="description" content="Ordina online da Al Ponte di Schiavonia a Forlì. Menu completo con pizze, primi, secondi e bevande. Consegna a domicilio o ritiro in loco.">
     <title>Ordina Online • Al Ponte di Schiavonia | Forlì</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,6 +144,8 @@
             <div class="category-tabs">
                 <button class="tab-btn active" onclick="showCategory('pizze')">🍕 Pizze</button>
                 <button class="tab-btn" onclick="showCategory('antipasti')">🥗 Antipasti</button>
+                <button class="tab-btn" onclick="showCategory('primi')">🍝 Primi</button>
+                <button class="tab-btn" onclick="showCategory('secondi')">🥩 Secondi</button>
                 <button class="tab-btn" onclick="showCategory('bevande')">🍺 Bevande</button>
                 <button class="tab-btn" onclick="showCategory('dessert')">🍰 Dessert</button>
             </div>
@@ -155,6 +157,14 @@
             <!-- ANTIPASTI -->
             <div id="antipasti" class="menu-section">
                 <div class="product-grid" id="grid-antipasti"></div>
+            </div>
+            <!-- PRIMI -->
+            <div id="primi" class="menu-section">
+                <div class="product-grid" id="grid-primi"></div>
+            </div>
+            <!-- SECONDI -->
+            <div id="secondi" class="menu-section">
+                <div class="product-grid" id="grid-secondi"></div>
             </div>
             <!-- BEVANDE -->
             <div id="bevande" class="menu-section">
@@ -238,7 +248,7 @@
     </footer>
 
     <script>
-        // --- DATI DEL MENU (Estratti dai tuoi file) ---
+        // --- DATI COMPLETI DEL MENU (Estratti dai tuoi file) ---
         const menuData = {
             pizze: [
                 { id: 'p1', name: 'Marinara', desc: 'Pomodoro, Prezzemolo, Aglio', price: 6.00 },
@@ -253,31 +263,56 @@
                 { id: 'p10', name: 'Americana', desc: 'Fior di Latte, Pomodoro, Wurstel, Patate Fritte', price: 10.00 },
                 { id: 'p11', name: 'Bomba', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Fagioli, Salsiccia, Cipolla', price: 10.00 },
                 { id: 'p12', name: 'Mandolino', desc: 'Mozzarella di Bufala DOP, Pomodoro, Olive Taggiasche, Origano', price: 10.00 },
-                { id: 'p13', name: 'Vegetariana', desc: 'Fior di Latte, Pomodoro, Grana Padano, Verdure Fresche', price: 10.00 },
-                { id: 'p14', name: 'Vulcano', desc: 'Fior di Latte, Pomodoro, Wurstel, Salame Piccante, Funghi, Pancetta', price: 10.00 },
-                { id: 'p15', name: 'Boscaiola', desc: 'Fior di Latte, Pomodoro, Funghi Porcini, Pancetta, Champignon', price: 10.50 },
-                { id: 'p16', name: 'Messicana', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Pancetta, Fagioli', price: 10.50 },
-                { id: 'p17', name: 'Raffinata', desc: 'Fior di Latte, Pomodoro, Prosciutto Crudo di Parma, Grana, Rucola', price: 10.00 },
-                { id: 'p18', name: 'Rustica', desc: 'Fior di Latte, Pomodoro, Gorgonzola, Funghi Porcini, Rucola', price: 10.50 },
-                { id: 'p19', name: 'Biscara', desc: 'Mozzarella di Bufala DOP, Pomodoro, Funghi Porcini, Salsiccia', price: 11.00 },
-                { id: 'p20', name: 'Tirolese', desc: 'Fior di Latte, Pomodoro, Speck, Funghi, Rucola', price: 11.00 },
-                { id: 'p21', name: 'Fuoco del Vesuvio', desc: 'Fior di Latte, Pomodoro, Peperoni, Rucola, Salame Piccante', price: 11.00 },
-                { id: 'p22', name: 'Sfiziosa', desc: 'Fior di Latte, Pomodoro, Scamorza, Funghi Porcini, Speck', price: 11.00 },
-                { id: 'p23', name: 'Viking', desc: 'Fior di Latte, Pomodoro, Funghi Porcini, Salsiccia, Cipolla, Olive', price: 11.50 },
-                { id: 'p24', name: 'Capricciosa', desc: 'Pomodoro, Prosciutto Cotto, Fior di Latte, Olive, Carciofi, Salsiccia', price: 12.00 },
-                { id: 'p25', name: 'Misteriosa', desc: 'Fior di Latte, Pomodoro, Salsiccia, Grana Padano, Rucola, Funghi', price: 12.00 },
-                { id: 'p26', name: 'Ricca', desc: 'Fior di Latte, Mozzarella di Bufala, Gorgonzola, Scamorza, Crudo', price: 12.50 },
-                { id: 'p27', name: 'Aromatica', desc: 'Mozzarella Fiordilatte, Burrata, Prosciutto Crudo di Parma', price: 13.00 },
-                { id: 'p28', name: 'Delicius', desc: 'Mozzarella Fiordilatte, Burrata, Acciughe del Cantabrico, Olive', price: 14.00 }
+                { id: 'p13', name: 'Saporita', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Salsiccia, Wurstel', price: 10.00 },
+                { id: 'p14', name: 'Vegetariana', desc: 'Fior di Latte, Pomodoro, Grana Padano, Verdure Fresche', price: 10.00 },
+                { id: 'p15', name: 'Verdure Grigliate', desc: 'Fior di Latte, Pomodoro, Peperoni, Zucchine, Melanzane', price: 9.00 },
+                { id: 'p16', name: 'Vigliacca', desc: 'Fior di Latte, Pomodoro, Gorgonzola, Pancetta, Spinaci', price: 10.00 },
+                { id: 'p17', name: 'Vulcano', desc: 'Fior di Latte, Pomodoro, Wurstel, Salame Piccante, Funghi Champignon, Pancetta', price: 10.00 },
+                { id: 'p18', name: 'Boscaiola', desc: 'Fior di Latte, Pomodoro, Funghi Porcini, Pancetta, Funghi Champignon', price: 10.50 },
+                { id: 'p19', name: 'Messicana', desc: 'Fior di Latte, Pomodoro, Salame Piccante, Pancetta, Fagioli, Peperoncino', price: 10.50 },
+                { id: 'p20', name: 'Raffinata', desc: 'Fior di Latte, Pomodoro, Prosciutto Crudo di Parma, Grana Padano, Rucola', price: 10.00 },
+                { id: 'p21', name: 'Rustica', desc: 'Fior di Latte, Pomodoro, Gorgonzola, Funghi Porcini, Rucola', price: 10.50 },
+                { id: 'p22', name: 'Stravagante', desc: 'Specialità dello chef', price: 10.50 },
+                { id: 'p23', name: 'Tirolese', desc: 'Specialità dello chef', price: 11.00 },
+                { id: 'p24', name: 'Fuoco del Vesuvio', desc: 'Fior di Latte, Pomodoro, Peperoni, Rucola, Salame Piccante, Olive Taggiasche', price: 11.00 },
+                { id: 'p25', name: 'Sfiziosa', desc: 'Fior di Latte, Pomodoro, Scamorza, Funghi Porcini, Speck', price: 11.00 },
+                { id: 'p26', name: 'Viking', desc: 'Fior di Latte, Pomodoro, Funghi Porcini, Salsiccia, Cipolla, Olive Taggiasche', price: 11.50 },
+                { id: 'p27', name: 'Capricciosa', desc: 'Pomodoro, Prosciutto Cotto, Fior di Latte, Olive Taggiasche, Carciofi, Salsiccia, Funghi', price: 12.00 },
+                { id: 'p28', name: 'Misteriosa', desc: 'Fior di Latte, Pomodoro, Salsiccia, Grana Padano, Rucola, Funghi Porcini, Zucchine', price: 12.00 },
+                { id: 'p29', name: 'Ricca', desc: 'Fior di Latte, Mozzarella di Bufala, Gorgonzola, Scamorza, Prosciutto Crudo di Parma', price: 12.50 },
+                { id: 'p30', name: 'Aromatica', desc: 'Mozzarella Fiordilatte, Burrata, Prosciutto Crudo di Parma', price: 13.00 },
+                { id: 'p31', name: 'Biscara', desc: 'Mozzarella di Bufala DOP, Pomodoro, Funghi Porcini, Salsiccia', price: 11.00 },
+                { id: 'p32', name: 'Delicius', desc: 'Mozzarella Fiordilatte, Burrata, Acciughe del Cantabrico, Olive Taggiasche', price: 14.00 }
             ],
             antipasti: [
-                { id: 'a1', name: 'Tartare di Controfiletto', desc: 'Manzo irlandese, frutta fresca, senape al miele', price: 12.00 },
-                { id: 'a2', name: 'Acciughe del Mar Cantabrico', desc: 'Con Burrata, pane croccante e burro', price: 11.00 },
+                { id: 'a1', name: 'Tartare di Controfiletto Irlandese', desc: 'Manzo irlandese, frutta fresca, senape al miele', price: 12.00 },
+                { id: 'a2', name: 'Acciughe del Mar Cantabrico e Burrata', desc: 'Con pane croccante e burro', price: 11.00 },
                 { id: 'a3', name: 'Bruciatini', desc: 'Radicchio fresco, pancetta croccante, aceto balsamico', price: 8.00 },
                 { id: 'a4', name: 'Flan di Zucca e Porri', desc: 'Su crema di Gorgonzola', price: 8.00 },
-                { id: 'a5', name: 'Selezione di Affettati', desc: 'Salame, Prosciutto di Parma, Pancetta, Mortadella, Piadina', price: 10.00 },
-                { id: 'a6', name: 'Degustazione Formaggi DOP', desc: 'Fossa di Sogliano, Squacquerone, Scoparolo, Pecorino, Piadina', price: 10.00 },
+                { id: 'a5', name: 'Selezione di Affettati Tipici', desc: 'Salame, Prosciutto di Parma, Pancetta, Mortadella, Piadina', price: 10.00 },
+                { id: 'a6', name: 'Degustazione di Formaggi DOP', desc: 'Fossa di Sogliano, Squacquerone, Scoparolo, Pecorino, Piadina', price: 10.00 },
                 { id: 'a7', name: 'Cozze alla Tarantina', desc: 'Pomodoro, aglio, prezzemolo, peperoncino', price: 12.00 }
+            ],
+            primi: [
+                { id: 'pr1', name: 'Tagliatelle al Ragù della Nonna Franca', desc: 'Fatte in casa con ragù lento di carne, soffritto e pomodoro', price: 10.00 },
+                { id: 'pr2', name: 'Cappelletti al Crudo di Parma e Pesto di Rucola', desc: 'Pasta ripiena tipica con prosciutto crudo e ciliegini', price: 12.00 },
+                { id: 'pr3', name: 'Cappelletti al Ragù della Nonna Franca', desc: 'Pasta ripiena tipica romagnola servita con ragù', price: 12.00 },
+                { id: 'pr4', name: 'Tortelli di Ricotta e Spinaci', desc: 'Con guanciale croccante, salvia e crema di burro chiarificato', price: 12.00 },
+                { id: 'pr5', name: 'Strozzapreti ai Porcini', desc: 'Con scaglie di Pecorino di Fossa di Sogliano', price: 14.00 },
+                { id: 'pr6', name: 'Gnocchetti alle Vongole', desc: 'Su crema di zucchine e pomodori datterini', price: 14.00 },
+                { id: 'pr7', name: 'Tagliolini allo Scoglio', desc: 'Frutti di mare misti: seppia, gamberi, polpo, cozze, vongole', price: 17.00 },
+                { id: 'pr8', name: 'Lasagne della Tradizione Romagnola', desc: 'Sfoglia all\'uovo, ragù di carne, besciamella e Parmigiano', price: 12.00 }
+            ],
+            secondi: [
+                { id: 's1', name: 'Galletto a Bassa Temperatura agli Agrumi', desc: 'Con spinaci al vapore e riduzione alla soia', price: 15.00 },
+                { id: 's2', name: 'Tagliata di Controfiletto "Argentinian"', desc: 'Al sale di Cervia con patate rustiche al forno', price: 22.00 },
+                { id: 's3', name: 'Baccalà Mantecato', desc: 'Su crema di cipolle al nero di seppia e pesto di pomodori secchi', price: 15.00 },
+                { id: 's4', name: 'Filetto di Manzo "Angus" ai Porcini', desc: 'Preparato a bassa temperatura', price: 24.00 },
+                { id: 's5', name: 'Filetto di Manzo "Angus" al Pepe Rosa', desc: 'Con cognac', price: 19.00 },
+                { id: 's6', name: 'Polpo Cotto a Bassa Temperatura', desc: 'Su crema di patate e gocce di prezzemolo', price: 15.00 },
+                { id: 's7', name: 'Fritto di Mare e Verdure Croccanti', desc: 'Mazzancolle, calamari, alici, melanzane e zucchine', price: 16.00 },
+                { id: 's8', name: 'Grigliata di Carne con Patate al Forno', desc: 'Salsiccia, petto di pollo, pancetta, lonza', price: 18.00 },
+                { id: 's9', name: 'Cotoletta alla Milanese', desc: 'Con patate fritte', price: 15.00 }
             ],
             bevande: [
                 { id: 'b1', name: 'Acqua Naturale Pejo', desc: '75 cl in vetro', price: 3.00 },
@@ -287,9 +322,9 @@
                 { id: 'b5', name: 'Coca Cola', desc: '1 Litro in vetro', price: 8.00 },
                 { id: 'b6', name: 'Birra Beck\'s', desc: '33 cl', price: 4.00 },
                 { id: 'b7', name: 'Birra Ceres', desc: '33 cl • 7.7% Vol', price: 4.50 },
-                { id: 'b8', name: 'Birra Moretti', desc: '55 cl Filtrata a Freddo', price: 5.00 },
-                { id: 'b9', name: 'Birra Ichnusa', desc: '50 cl non Filtrata', price: 5.00 },
-                { id: 'b10', name: 'Birra Messina', desc: '50 cl Bionda', price: 5.00 },
+                { id: 'b8', name: 'Birra Moretti Filtrata a Freddo', desc: '55 cl • 4.3% Vol', price: 5.00 },
+                { id: 'b9', name: 'Birra Ichnusa non Filtrata', desc: '50 cl', price: 5.00 },
+                { id: 'b10', name: 'Birra Messina', desc: '50 cl Bionda Italiana', price: 5.00 },
                 { id: 'b11', name: 'Birra Erdinger', desc: '50 cl • 5.3% Vol', price: 5.00 },
                 { id: 'b12', name: 'Birra Paulaner', desc: '50 cl', price: 5.00 },
                 { id: 'b13', name: 'Birra Leffe Blonde', desc: '75 cl • 6.6% Vol', price: 10.00 },
@@ -315,18 +350,20 @@
         function renderMenu() {
             for (const [category, items] of Object.entries(menuData)) {
                 const grid = document.getElementById(`grid-${category}`);
-                grid.innerHTML = items.map(item => `
-                    <div class="product-card">
-                        <div class="product-name">${item.name}</div>
-                        <div class="product-desc">${item.desc}</div>
-                        <div class="product-footer">
-                            <span class="product-price">${item.price.toFixed(2).replace('.', ',')} €</span>
-                            <button class="btn-add" onclick="addToCart('${item.id}', '${item.name}', ${item.price})">
-                                <i class="fa-solid fa-plus"></i> Aggiungi
-                            </button>
+                if(grid) {
+                    grid.innerHTML = items.map(item => `
+                        <div class="product-card">
+                            <div class="product-name">${item.name}</div>
+                            <div class="product-desc">${item.desc}</div>
+                            <div class="product-footer">
+                                <span class="product-price">${item.price.toFixed(2).replace('.', ',')} €</span>
+                                <button class="btn-add" onclick="addToCart('${item.id}', '${item.name}', ${item.price})">
+                                    <i class="fa-solid fa-plus"></i> Aggiungi
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                `).join('');
+                    `).join('');
+                }
             }
         }
 
