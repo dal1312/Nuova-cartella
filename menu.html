@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu completo della Trattoria e Pizzeria Al Ponte di Schiavonia a Forlì. 33 pizze al forno a legna, primi fatti in casa, secondi di carne e pesce. Allergeni e ingredienti dettagliati.">
+    <title>Menu • Al Ponte di Schiavonia | Forlì</title>
+    
+    <meta property="og:title" content="Menu - Al Ponte di Schiavonia">
+    <meta property="og:description" content="Scopri il nostro menu: 33 pizze al forno a legna, primi piatti della tradizione romagnola, secondi di carne e pesce.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200">
+    <meta property="og:type" content="restaurant.restaurant_menu">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Menu Al Ponte di Schiavonia",
+      "hasMenuSection": [
+        {"@type":"MenuSection","name":"Antipasti","numberOfItems":7},
+        {"@type":"MenuSection","name":"Primi Piatti","numberOfItems":8},
+        {"@type":"MenuSection","name":"Pizze","numberOfItems":33},
+        {"@type":"MenuSection","name":"Secondi Piatti","numberOfItems":9},
+        {"@type":"MenuSection","name":"Dessert","numberOfItems":4}
+      ],
+      "restaurant": {
+        "@type": "Restaurant",
+        "name": "Al Ponte di Schiavonia",
+        "address": "Viale Salinatore 86, 47121 Forlì FC"
+      }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #B94A28; --primary-dark: #8A351B; --secondary: #1C1917;
+            --accent: #D97706; --bg-body: #FAFAF9; --bg-card: #FFFFFF;
+            --text-main: #44403C; --text-muted: #78716C;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --radius: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--secondary); }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        
+        header { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.75rem; }
+        .logo i { color: var(--accent); font-size: 1.3rem; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-main); }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .btn-prenota { background-color: var(--primary); color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; font-weight: 600; }
+        .btn-prenota:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
+
+        .hero-menu { background: linear-gradient(rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 6rem 1.5rem; }
+        .hero-menu h1 { font-size: 3.5rem; color: white; margin-bottom: 0.5rem; }
+        .hero-menu p { font-size: 1.3rem; color: #E7E5E4; font-style: italic; font-family: 'Playfair Display', serif; }
+
+        .filter-container { background-color: var(--bg-body); position: sticky; top: 73px; z-index: 900; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .filter-buttons { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 0.75rem; overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth; }
+        .filter-buttons::-webkit-scrollbar { display: none; }
+        .filter-btn { background-color: white; border: 1px solid #E7E5E4; color: var(--text-main); padding: 0.6rem 1.2rem; border-radius: 50px; font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; display: flex; align-items: center; gap: 0.5rem; }
+        .filter-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .filter-btn.active { background-color: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 12px rgba(185, 74, 40, 0.3); }
+        .filter-count { background-color: rgba(255,255,255,0.25); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.75rem; font-weight: 600; }
+        .filter-btn:not(.active) .filter-count { background-color: #F5F5F4; color: var(--text-muted); }
+
+        .menu-container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
+        .menu-category { margin-bottom: 4rem; scroll-margin-top: 160px; }
+        .menu-category.hidden { display: none; }
+        .category-title { font-size: 2rem; color: var(--secondary); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+        .category-title i { color: var(--primary); font-size: 1.5rem; }
+        
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        .menu-card { background-color: var(--bg-card); border-radius: var(--radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.04); box-shadow: var(--shadow-sm); transition: all 0.3s ease; display: flex; flex-direction: column; animation: fadeInUp 0.4s ease forwards; }
+        .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); border-color: rgba(185, 74, 40, 0.1); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+        .item-name { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.15rem; color: var(--secondary); line-height: 1.3; }
+        .item-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; white-space: nowrap; margin-left: 1rem; }
+        .item-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5; flex-grow: 1; }
+        .item-ingredients { font-size: 0.8rem; color: #A8A29E; margin-bottom: 1rem; font-style: italic; }
+        .item-ingredients::before { content: "• "; color: var(--accent); }
+        .item-allergens { font-size: 0.75rem; color: #991B1B; font-weight: 600; background-color: #FEF2F2; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem; border-radius: 8px; border: 1px solid #FECACA; align-self: flex-start; }
+
+        .contact-bar { background-color: var(--secondary); color: white; text-align: center; padding: 4rem 1.5rem; margin-top: 4rem; }
+        .contact-bar h2 { color: white; margin-bottom: 1rem; font-size: 2rem; }
+        .contact-bar p { color: #A8A29E; margin-bottom: 2rem; font-size: 1.1rem; }
+        .btn-whatsapp-large { display: inline-flex; align-items: center; gap: 0.75rem; background-color: #25D366; color: white; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); }
+        .btn-whatsapp-large:hover { background-color: #128C7E; transform: translateY(-2px); }
+
+        footer { background-color: #0C0A09; color: #78716C; text-align: center; padding: 2rem 1.5rem; font-size: 0.85rem; }
+        footer a { color: #A8A29E; text-decoration: underline; }
+
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; border: none; font-size: 1.2rem; }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { background-color: var(--primary-dark); transform: translateY(-3px); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-menu h1 { font-size: 2.2rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .filter-container { top: 65px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-utensils"></i><span>Al Ponte di Schiavonia</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                    <li><a href="https://wa.me/393XXXXXXXXX?text=Salve%2C%20vorrei%20prenotare%20un%20tavolo" class="btn-prenota">Prenota</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-menu">
+        <h1>Il Nostro Menu</h1>
+        <p>Tradizione romagnola, ingredienti freschi e forno a legna • Dal 1978</p>
+    </section>
+
+    <div class="filter-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-utensils"></i> Tutti <span class="filter-count">67</span></button>
+            <button class="filter-btn" data-filter="antipasti"><i class="fa-solid fa-bread-slice"></i> Antipasti <span class="filter-count">7</span></button>
+            <button class="filter-btn" data-filter="primi"><i class="fa-solid fa-bowl-food"></i> Primi <span class="filter-count">8</span></button>
+            <button class="filter-btn" data-filter="pizze"><i class="fa-solid fa-pizza-slice"></i> Pizze <span class="filter-count">33</span></button>
+            <button class="filter-btn" data-filter="secondi"><i class="fa-solid fa-drumstick-bite"></i> Secondi <span class="filter-count">9</span></button>
+            <button class="filter-btn" data-filter="contorni"><i class="fa-solid fa-carrot"></i> Contorni <span class="filter-count">5</span></button>
+            <button class="filter-btn" data-filter="dessert"><i class="fa-solid fa-cake-candles"></i> Dessert <span class="filter-count">4</span></button>
+            <button class="filter-btn" data-filter="birre"><i class="fa-solid fa-beer-mug-empty"></i> Birre <span class="filter-count">9</span></button>
+            <button class="filter-btn" data-filter="bevande"><i class="fa-solid fa-wine-glass"></i> Bevande <span class="filter-count">5</span></button>
+        </div>
+    </div>
+
+    <main class="menu-container">
+        <!-- ANTIPASTI -->
+        <section id="antipasti" class="menu-category" data-category="antipasti">
+            <h2 class="category-title"><i class="fa-solid fa-bread-slice"></i> Antipasti</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tartare di Controfiletto Irlandese</span><span class="item-price">12,00 €</span></div><p class="item-desc">Carne cruda tagliata a coltello, cubetti di frutta fresca e nota saporita di senape al miele.</p><p class="item-ingredients">Manzo irlandese, Frutta fresca, Senape al miele</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Senape</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Acciughe del Mar Cantabrico e Burrata</span><span class="item-price">11,00 €</span></div><p class="item-desc">Cremosità della Burrata e sapore salato delle acciughe, con pane croccante e burro.</p><p class="item-ingredients">Acciughe, Burrata, Pane croccante, Burro</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Pesce, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Bruciatini</span><span class="item-price">8,00 €</span></div><p class="item-desc">Piatto tipico romagnolo: radicchio fresco e pancetta cotta in padella con aceto balsamico.</p><p class="item-ingredients">Radicchio fresco, Pancetta, Aceto balsamico</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Flan di Zucca e Porri</span><span class="item-price">8,00 €</span></div><p class="item-desc">Crema morbida di zucca e porri servita su una crema di Gorgonzola dal sapore deciso.</p><p class="item-ingredients">Zucca, Porri, Gorgonzola</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Selezione di Affettati Tipici</span><span class="item-price">10,00 €</span></div><p class="item-desc">Scelta di affettati locali accompagnati da piadina romagnola calda e morbida.</p><p class="item-ingredients">Salame, Prosciutto di Parma, Pancetta, Mortadella, Piadina</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Degustazione di Formaggi DOP</span><span class="item-price">10,00 €</span></div><p class="item-desc">Formaggio di Fossa di Sogliano, Squacquerone, Scoparolo, Pecorino Romagnolo e piadina.</p><p class="item-ingredients">Pecorino, Scoparolo, Fossa di Sogliano, Squacquerone, Piadina</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Cozze alla Tarantina</span><span class="item-price">12,00 €</span></div><p class="item-desc">Cozze del Mediterraneo cotte con salsa leggermente piccante di pomodoro, aglio e prezzemolo.</p><p class="item-ingredients">Cozze, Pomodoro, Aglio, Prezzemolo</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Molluschi</span></div>
+            </div>
+        </section>
+
+        <!-- PRIMI -->
+        <section id="primi" class="menu-category" data-category="primi">
+            <h2 class="category-title"><i class="fa-solid fa-bowl-food"></i> Primi Piatti</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tagliatelle al Ragù della Nonna Franca</span><span class="item-price">10,00 €</span></div><p class="item-desc">Fatte in casa con ragù lento di carne macinata, soffritto di verdure e pomodoro.</p><p class="item-ingredients">Sedano, Cipolla, Pasta fresca, Carne, Carota</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Sedano, Glutine, Uova</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Cappelletti al Crudo e Pesto di Rucola</span><span class="item-price">12,00 €</span></div><p class="item-desc">Pasta ripiena tipica con prosciutto crudo, pomodorini ciliegini e pesto di rucola.</p><p class="item-ingredients">Prosciutto crudo, Farina, Pasta fresca, Grana, Carne</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Uova, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Cappelletti al Ragù della Nonna Franca</span><span class="item-price">12,00 €</span></div><p class="item-desc">Pasta ripiena tipica romagnola servita con il nostro ragù della tradizione.</p><p class="item-ingredients">Grana Padano, Ricotta, Uova, Farina, Maiale, Pollo</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Sedano, Glutine, Uova, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tortelli di Ricotta e Spinaci</span><span class="item-price">12,00 €</span></div><p class="item-desc">Con guanciale croccante, salvia aromatica e crema di burro chiarificato.</p><p class="item-ingredients">Guanciale, Pasta fresca, Farina, Burro, Salvia</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Uova, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Strozzapreti ai Porcini e Pecorino di Fossa</span><span class="item-price">14,00 €</span></div><p class="item-desc">Strozzapreti con funghi porcini e scaglie di pecorino di fossa di Sogliano.</p><p class="item-ingredients">Porcini, Pecorino di Fossa di Sogliano, Farina</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Gnocchetti alle Vongole e Zucchine</span><span class="item-price">14,00 €</span></div><p class="item-desc">Gnocchetti di patate fatti in casa con vongole fresche, crema di zucchine e datterini.</p><p class="item-ingredients">Vongole, Zucchine, Aglio, Pasta fresca, Pomodorini</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Cereali, Molluschi</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tagliolini allo Scoglio</span><span class="item-price">17,00 €</span></div><p class="item-desc">Frutti di mare misti: seppia, gamberi, polpo, cozze e vongole.</p><p class="item-ingredients">Seppia, Gamberi, Polpo, Pasta fresca, Cozze, Vongole</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Sedano, Glutine, Crostacei, Pesce, Uova, Molluschi</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Lasagne della Tradizione Romagnola</span><span class="item-price">12,00 €</span></div><p class="item-desc">Sfoglia all'uovo, ragù di carne, besciamella e Parmigiano Reggiano.</p><p class="item-ingredients">Sfoglia all'uovo, Ragù di carne, Besciamella, Parmigiano</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Sedano, Uova, Latte</span></div>
+            </div>
+        </section>
+
+        <!-- PIZZE -->
+        <section id="pizze" class="menu-category" data-category="pizze">
+            <h2 class="category-title"><i class="fa-solid fa-pizza-slice"></i> Pizze al Forno a Legna</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Marinara</span><span class="item-price">6,00 €</span></div><p class="item-ingredients">Pomodoro, Prezzemolo, Aglio</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Margherita</span><span class="item-price">7,00 €</span></div><p class="item-ingredients">Pomodoro, Fior di Latte</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Biancaneve</span><span class="item-price">7,00 €</span></div><p class="item-ingredients">Fior di Latte</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Napoli</span><span class="item-price">8,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Acciughe, Origano</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Pesce, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Romana</span><span class="item-price">8,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Acciughe, Capperi</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Diavola</span><span class="item-price">9,00 €</span></div><p class="item-ingredients">Capperi, Fior di Latte, Pomodoro, Salame Piccante, Acciughe</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Pesce, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Trevisana</span><span class="item-price">9,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Radicchio, Salsiccia</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Ghiotta</span><span class="item-price">9,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Scamorza, Salame Piccante, Cipolla</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Parmigiana</span><span class="item-price">9,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Melanzane, Grana Padano</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Verdure Grigliate</span><span class="item-price">9,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Peperoni, Zucchine, Melanzane</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Americana</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Wurstel, Patate Fritte</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Bomba</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Salame Piccante, Fagioli, Salsiccia, Cipolla</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Mandolino</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Mozzarella di Bufala DOP, Pomodoro, Olive Taggiasche, Origano, Pomodori</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Saporita</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Salame Piccante, Salsiccia, Wurstel</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Vegetariana</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Grana Padano, Verdure Fresche</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Vigliacca</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Gorgonzola, Pancetta, Spinaci</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Vulcano</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Wurstel, Salame Piccante, Funghi Champignon, Pancetta</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Raffinata</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Prosciutto Crudo di Parma, Grana Padano, Rucola</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Boscaiola</span><span class="item-price">10,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Funghi Porcini, Pancetta, Funghi Champignon</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Messicana</span><span class="item-price">10,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Salame Piccante, Pancetta, Fagioli, Peperoncino</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Rustica</span><span class="item-price">10,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Gorgonzola, Funghi Porcini, Rucola</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Stravagante</span><span class="item-price">10,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Prosciutto Cotto, Funghi, Rucola</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Biscara</span><span class="item-price">11,00 €</span></div><p class="item-ingredients">Mozzarella di Bufala DOP, Pomodoro, Funghi Porcini, Salsiccia</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tirolese</span><span class="item-price">11,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Speck, Funghi, Rucola</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Fuoco del Vesuvio</span><span class="item-price">11,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Peperoni, Rucola, Salame Piccante, Olive Taggiasche</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Sfiziosa</span><span class="item-price">11,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Scamorza, Funghi Porcini, Speck</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Viking</span><span class="item-price">11,50 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Funghi Porcini, Salsiccia, Cipolla, Olive Taggiasche</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Capricciosa</span><span class="item-price">12,00 €</span></div><p class="item-ingredients">Pomodoro, Prosciutto Cotto, Fior di Latte, Olive Taggiasche, Carciofi, Salsiccia, Funghi</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Misteriosa</span><span class="item-price">12,00 €</span></div><p class="item-ingredients">Fior di Latte, Pomodoro, Salsiccia, Grana Padano, Rucola, Funghi Porcini, Zucchine</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Ricca</span><span class="item-price">12,50 €</span></div><p class="item-ingredients">Fior di Latte, Mozzarella di Bufala, Gorgonzola, Scamorza, Prosciutto Crudo di Parma</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Aromatica</span><span class="item-price">13,00 €</span></div><p class="item-ingredients">Mozzarella Fiordilatte, Burrata, Prosciutto Crudo di Parma</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Delicius</span><span class="item-price">14,00 €</span></div><p class="item-ingredients">Mozzarella Fiordilatte, Burrata, Acciughe del Cantabrico, Olive Taggiasche</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Pesce, Latte</span></div>
+            </div>
+        </section>
+
+        <!-- SECONDI -->
+        <section id="secondi" class="menu-category" data-category="secondi">
+            <h2 class="category-title"><i class="fa-solid fa-drumstick-bite"></i> Secondi Piatti</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Galletto a Bassa Temperatura agli Agrumi</span><span class="item-price">15,00 €</span></div><p class="item-desc">Con salsa agli agrumi, erbette fresche al vapore e glassa alla salsa di soia.</p><p class="item-ingredients">Galletto, Agrumi, Spinaci, Salsa di soia</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Soia</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Polpo Cotto a Bassa Temperatura</span><span class="item-price">15,00 €</span></div><p class="item-desc">Su crema di patate con gocce di prezzemolo.</p><p class="item-ingredients">Polpo, Scalogno, Patate, Prezzemolo, Sedano, Carote, Cipolla</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Sedano, Pesce</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Baccalà Mantecato</span><span class="item-price">15,00 €</span></div><p class="item-desc">Su crema di cipolle al nero di seppia con pesto di pomodori secchi.</p><p class="item-ingredients">Baccalà, Cipolle, Nero di seppia, Pomodori secchi</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Pesce</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Cotoletta alla Milanese</span><span class="item-price">15,00 €</span></div><p class="item-desc">Servita con contorno di patate fritte.</p><p class="item-ingredients">Cotoletta, Patate fritte</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Fritto di Mare e Verdure Croccanti</span><span class="item-price">16,00 €</span></div><p class="item-desc">Mazzancolle, anelli di calamari, alici, melanzane e zucchine in frittura mista.</p><p class="item-ingredients">Mazzancolle, Calamari, Melanzane, Zucchine</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Glutine, Crostacei, Pesce, Molluschi</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Grigliata di Carne con Patate al Forno</span><span class="item-price">18,00 €</span></div><p class="item-desc">Salsiccia, petto di pollo, pancetta, lonza e patate al forno.</p><p class="item-ingredients">Salsiccia, Petto di pollo, Lonza di maiale, Pancetta, Patate</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Filetto di Manzo "Angus" al Pepe Rosa</span><span class="item-price">19,00 €</span></div><p class="item-desc">Filetto di manzo Angus al pepe rosa con cognac.</p><p class="item-ingredients">Filetto di manzo, Cognac, Pepe verde</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tagliata di Controfiletto "Argentinian"</span><span class="item-price">22,00 €</span></div><p class="item-desc">Cotta con sale di Cervia e servita con patate rustiche al forno.</p><p class="item-ingredients">Controfiletto di manzo, Aglio, Rosmarino, Patata</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Filetto di Manzo "Angus" ai Porcini</span><span class="item-price">24,00 €</span></div><p class="item-desc">Preparato a bassa temperatura con funghi porcini.</p><p class="item-ingredients">Filetto di manzo, Aglio, Porcini</p></div>
+            </div>
+        </section>
+
+        <!-- CONTORNI -->
+        <section id="contorni" class="menu-category" data-category="contorni">
+            <h2 class="category-title"><i class="fa-solid fa-carrot"></i> Contorni</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Patate Fritte</span><span class="item-price">4,50 €</span></div></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Anelli di Cipolla Fritti</span><span class="item-price">4,50 €</span></div></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Insalata Mista</span><span class="item-price">5,00 €</span></div></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Verdure Grigliate</span><span class="item-price">5,00 €</span></div></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Melanzane e Zucchine Fritte</span><span class="item-price">5,00 €</span></div></div>
+            </div>
+        </section>
+
+        <!-- DESSERT -->
+        <section id="dessert" class="menu-category" data-category="dessert">
+            <h2 class="category-title"><i class="fa-solid fa-cake-candles"></i> Dessert</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Mascarpone</span><span class="item-price">5,00 €</span></div><p class="item-ingredients">Mascarpone, Uova, Zucchero</p><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Uova, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tiramisù</span><span class="item-price">5,00 €</span></div><span class="item-allergens"><i class="fa-solid fa-triangle-exclamation"></i> Uova, Latte</span></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Crema Catalana</span><span class="item-price">5,00 €</span></div></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Tortino di Cioccolato con Cuore Fondente</span><span class="item-price">5,00 €</span></div></div>
+            </div>
+        </section>
+
+        <!-- BIRRE -->
+        <section id="birre" class="menu-category" data-category="birre">
+            <h2 class="category-title"><i class="fa-solid fa-beer-mug-empty"></i> Birre in Bottiglia</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Beck's (Tedesca Bionda)</span><span class="item-price">4,00 €</span></div><p class="item-ingredients">33 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Ceres</span><span class="item-price">4,50 €</span></div><p class="item-ingredients">33 cl • 7.7% Vol</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Moretti Filtrata a Freddo</span><span class="item-price">5,00 €</span></div><p class="item-ingredients">55 cl • 4.3% Vol</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Ichnusa non Filtrata</span><span class="item-price">5,00 €</span></div><p class="item-ingredients">50 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Messina (Bionda Italiana)</span><span class="item-price">5,00 €</span></div><p class="item-ingredients">50 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Erdinger</span><span class="item-price">5,00 €</span></div><p class="item-ingredients">50 cl • 5.3% Vol</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Paulaner</span><span class="item-price">5,00 €</span></div><p class="item-ingredients">50 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Leffe "Blonde"</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">75 cl • 6.6% Vol</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Leffe "Rouge"</span><span class="item-price">10,00 €</span></div><p class="item-ingredients">75 cl • 6.6% Vol</p></div>
+            </div>
+        </section>
+
+        <!-- BEVANDE -->
+        <section id="bevande" class="menu-category" data-category="bevande">
+            <h2 class="category-title"><i class="fa-solid fa-wine-glass"></i> Bevande</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="card-header"><span class="item-name">Acqua Naturale Pejo in Vetro</span><span class="item-price">3,00 €</span></div><p class="item-ingredients">75 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Acqua Gassata Pejo in Vetro</span><span class="item-price">3,00 €</span></div><p class="item-ingredients">75 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Coca Cola in Vetro</span><span class="item-price">3,50 €</span></div><p class="item-ingredients">33 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Fanta in PET</span><span class="item-price">3,50 €</span></div><p class="item-ingredients">45 cl</p></div>
+                <div class="menu-card"><div class="card-header"><span class="item-name">Coca Cola in Vetro</span><span class="item-price">8,00 €</span></div><p class="item-ingredients">1 Litro</p></div>
+            </div>
+        </section>
+
+        <p style="text-align: center; color: var(--text-muted); font-style: italic; margin-top: 3rem; font-size: 0.9rem; line-height: 1.6;">
+            * Tutti i prezzi sono in Euro • IVA inclusa.<br>
+            Gli ingredienti sono soggetti a variazioni stagionali.<br>
+            <strong style="color: var(--primary);">In caso di allergie o intolleranze alimentari, si prega di informare il personale di sala.</strong>
+        </p>
+    </main>
+
+    <section class="contact-bar">
+        <h2>Hai già scelto cosa mangiare?</h2>
+        <p>Ordina direttamente da noi o prenota il tuo tavolo. Zero commissioni.</p>
+        <a href="https://wa.me/393XXXXXXXXX?text=Salve%2C%20vorrei%20ordinare%20o%20prenotare%20un%20tavolo" class="btn-whatsapp-large">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Scrivici su WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 Al Ponte di Schiavonia • Trattoria e Pizzeria • Forlì</p>
+        <p style="margin-top: 0.5rem;">Tutti i diritti riservati | <a href="index.html">Home</a> | <a href="contatti.html">Contatti</a></p>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Torna in cima"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const menuCategories = document.querySelectorAll('.menu-category');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    menuCategories.forEach(category => {
+                        if (filter === 'all' || category.getAttribute('data-category') === filter) {
+                            category.classList.remove('hidden');
+                            category.style.animation = 'none';
+                            category.offsetHeight; 
+                            category.style.animation = 'fadeInUp 0.5s ease forwards';
+                        } else {
+                            category.classList.add('hidden');
+                        }
+                    });
+                    window.scrollTo({ top: document.querySelector('.filter-container').offsetTop - 80, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
