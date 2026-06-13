@@ -66,8 +66,7 @@
         
         header { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.75rem; }
-        .logo i { color: var(--accent); font-size: 1.3rem; }
+        .logo img { height: 60px; width: auto; }
         .nav-links { display: flex; gap: 2rem; }
         .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-main); }
         .nav-links a:hover, .nav-links a.active { color: var(--primary); }
@@ -121,11 +120,12 @@
 <body>
     <header>
         <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-utensils"></i><span>Al Ponte di Schiavonia</span></div>
+            <a href="index.html" class="logo"><img src="logo.png" alt="Al Ponte di Schiavonia Logo"></a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
+                    <li><a href="ordina.html">Ordina Online</a></li>
                     <li><a href="contatti.html" class="active">Contatti</a></li>
                     <li><a href="https://wa.me/393XXXXXXXXX?text=Salve%2C%20vorrei%20prenotare%20un%20tavolo" class="btn-prenota">Prenota</a></li>
                 </ul>
