@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ordina online da Al Ponte di Schiavonia a Forlì. Menu completo con pizze, primi, secondi e bevande. Consegna a domicilio o ritiro in loco.">
+    <meta name="description" content="Ordina online da Al Ponte di Schiavonia a Forlì. Menu completo con pizze personalizzabili, primi, secondi e bevande. Consegna a domicilio o ritiro in loco.">
     <title>Ordina Online • Al Ponte di Schiavonia | Forlì</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,10 +59,14 @@
         .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
         .product-name { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--secondary); }
         .product-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1; font-style: italic; }
-        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; gap: 0.5rem; }
         .product-price { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+        
+        .btn-group { display: flex; gap: 0.5rem; }
         .btn-add { background: var(--secondary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
         .btn-add:hover { background: var(--primary); }
+        .btn-customize { background: transparent; color: var(--text-muted); border: 1px solid #E7E5E4; padding: 0.5rem; border-radius: 8px; transition: all 0.2s; }
+        .btn-customize:hover { border-color: var(--primary); color: var(--primary); }
 
         /* CARRELLO SIDEBAR */
         .cart-sidebar { background: var(--bg-card); border-radius: var(--radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.04); box-shadow: var(--shadow-lg); position: sticky; top: 100px; }
@@ -74,6 +78,7 @@
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px dashed #E7E5E4; }
         .cart-item-info { flex: 1; }
         .cart-item-name { font-weight: 600; font-size: 0.9rem; }
+        .cart-item-details { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin-top: 0.2rem; }
         .cart-item-price { font-size: 0.85rem; color: var(--text-muted); }
         .cart-item-controls { display: flex; align-items: center; gap: 0.5rem; }
         .qty-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #E7E5E4; background: white; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--text-main); transition: all 0.2s; }
@@ -101,6 +106,30 @@
         .btn-whatsapp-order { background: #25D366; color: white; border: none; padding: 1rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem; transition: all 0.3s; margin-top: 1rem; }
         .btn-whatsapp-order:hover { background: #128C7E; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
         .btn-whatsapp-order:disabled { background: #9CA3AF; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        /* MODAL PERSONALIZZA */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: white; width: 90%; max-width: 500px; border-radius: var(--radius); padding: 2rem; max-height: 90vh; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .modal-title { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .close-modal { background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; }
+        
+        .customization-section { margin-bottom: 1.5rem; }
+        .customization-title { font-weight: 600; margin-bottom: 0.75rem; color: var(--text-main); display: block; }
+        .option-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .option-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; border: 1px solid #E7E5E4; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .option-item:hover { border-color: var(--primary); background: #FEF2F2; }
+        .option-item input { accent-color: var(--primary); width: 18px; height: 18px; }
+        .option-label { flex: 1; font-size: 0.95rem; }
+        .option-price { font-weight: 600; color: var(--primary); font-size: 0.9rem; }
+
+        .modal-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #E7E5E4; }
+        .modal-total { font-size: 1.2rem; font-weight: 700; color: var(--secondary); }
+        .btn-confirm-custom { background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 1rem; }
+        .btn-confirm-custom:hover { background: var(--primary-dark); }
 
         /* MOBILE CART TOGGLE */
         .mobile-cart-toggle { display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; padding: 1rem 1.5rem; border-radius: 50px; font-weight: 700; box-shadow: var(--shadow-lg); z-index: 999; align-items: center; gap: 0.75rem; border: none; }
@@ -223,7 +252,7 @@
 
                 <div class="form-group">
                     <label>Note per l'ordine (opzionale)</label>
-                    <textarea id="orderNotes" rows="2" placeholder="Es. Senza cipolla, citofono rotto, ecc."></textarea>
+                    <textarea id="orderNotes" rows="2" placeholder="Es. Citofono rotto, ecc."></textarea>
                 </div>
 
                 <button type="submit" class="btn-whatsapp-order" id="submitBtn" disabled>
@@ -235,6 +264,35 @@
             </form>
         </aside>
     </main>
+
+    <!-- MODAL PERSONALIZZA PIZZA -->
+    <div class="modal-overlay" id="customizeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalPizzaName">Personalizza Pizza</h3>
+                <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="customization-section">
+                <span class="customization-title">Rimuovi Ingredienti:</span>
+                <div class="option-list" id="removeOptions">
+                    <!-- Generato via JS -->
+                </div>
+            </div>
+
+            <div class="customization-section">
+                <span class="customization-title">Aggiungi Extra:</span>
+                <div class="option-list" id="addOptions">
+                    <!-- Generato via JS -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="modal-total">Totale: <span id="modalTotalPrice">0,00 €</span></div>
+                <button class="btn-confirm-custom" onclick="confirmCustomization()">Aggiungi al Carrello</button>
+            </div>
+        </div>
+    </div>
 
     <!-- PULSANTE MOBILE PER APRIRE CARRELLO -->
     <button class="mobile-cart-toggle" onclick="toggleCartMobile()">
@@ -248,7 +306,7 @@
     </footer>
 
     <script>
-        // --- DATI COMPLETI DEL MENU (Estratti dai tuoi file) ---
+        // --- DATI COMPLETI DEL MENU ---
         const menuData = {
             pizze: [
                 { id: 'p1', name: 'Marinara', desc: 'Pomodoro, Prezzemolo, Aglio', price: 6.00 },
@@ -338,8 +396,23 @@
             ]
         };
 
+        // Extra disponibili per personalizzazione
+        const extras = [
+            { id: 'ex1', name: 'Extra Mozzarella', price: 1.50 },
+            { id: 'ex2', name: 'Extra Bufala', price: 2.00 },
+            { id: 'ex3', name: 'Wurstel', price: 1.00 },
+            { id: 'ex4', name: 'Patatine Fritte', price: 1.00 },
+            { id: 'ex5', name: 'Funghi Porcini', price: 2.00 },
+            { id: 'ex6', name: 'Speck', price: 1.50 },
+            { id: 'ex7', name: 'Rucola', price: 0.50 },
+            { id: 'ex8', name: 'Grana Padano', price: 1.00 }
+        ];
+
         let cart = [];
-        // ⚠️ SOSTITUISCI QUESTO NUMERO CON IL TUO NUMERO WHATSAPP REALE (es. 393331234567)
+        let currentCustomizingPizza = null;
+        let selectedRemovals = [];
+        let selectedExtras = [];
+        // ⚠️ SOSTITUISCI QUESTO NUMERO CON IL TUO NUMERO WHATSAPP REALE
         const WHATSAPP_NUMBER = "393XXXXXXXXX"; 
 
         // --- INIZIALIZZAZIONE ---
@@ -351,18 +424,23 @@
             for (const [category, items] of Object.entries(menuData)) {
                 const grid = document.getElementById(`grid-${category}`);
                 if(grid) {
-                    grid.innerHTML = items.map(item => `
+                    grid.innerHTML = items.map(item => {
+                        const isPizza = category === 'pizze';
+                        return `
                         <div class="product-card">
                             <div class="product-name">${item.name}</div>
                             <div class="product-desc">${item.desc}</div>
                             <div class="product-footer">
                                 <span class="product-price">${item.price.toFixed(2).replace('.', ',')} €</span>
-                                <button class="btn-add" onclick="addToCart('${item.id}', '${item.name}', ${item.price})">
-                                    <i class="fa-solid fa-plus"></i> Aggiungi
-                                </button>
+                                <div class="btn-group">
+                                    ${isPizza ? `<button class="btn-customize" onclick="openCustomizeModal('${item.id}')"><i class="fa-solid fa-sliders"></i></button>` : ''}
+                                    <button class="btn-add" onclick="addToCart('${item.id}', '${item.name}', ${item.price})">
+                                        <i class="fa-solid fa-plus"></i> ${isPizza ? 'Aggiungi' : 'Aggiungi'}
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    `).join('');
+                    `}).join('');
                 }
             }
         }
@@ -372,6 +450,88 @@
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(category).classList.add('active');
             event.target.classList.add('active');
+        }
+
+        // --- LOGICA PERSONALIZZAZIONE ---
+        function openCustomizeModal(pizzaId) {
+            const pizza = menuData.pizze.find(p => p.id === pizzaId);
+            if (!pizza) return;
+
+            currentCustomizingPizza = pizza;
+            selectedRemovals = [];
+            selectedExtras = [];
+
+            document.getElementById('modalPizzaName').textContent = `Personalizza: ${pizza.name}`;
+            
+            // Genera opzioni rimozione (simulato dagli ingredienti nella descrizione)
+            const ingredients = pizza.desc.split(',').map(i => i.trim());
+            const removeContainer = document.getElementById('removeOptions');
+            removeContainer.innerHTML = ingredients.map(ing => `
+                <label class="option-item">
+                    <input type="checkbox" value="${ing}" onchange="updateModalTotal()">
+                    <span class="option-label">Senza ${ing}</span>
+                </label>
+            `).join('');
+
+            // Genera opzioni extra
+            const addContainer = document.getElementById('addOptions');
+            addContainer.innerHTML = extras.map(extra => `
+                <label class="option-item">
+                    <input type="checkbox" value="${extra.id}" data-price="${extra.price}" data-name="${extra.name}" onchange="updateModalTotal()">
+                    <span class="option-label">+ ${extra.name}</span>
+                    <span class="option-price">+${extra.price.toFixed(2).replace('.', ',')} €</span>
+                </label>
+            `).join('');
+
+            updateModalTotal();
+            document.getElementById('customizeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('customizeModal').classList.remove('active');
+            currentCustomizingPizza = null;
+        }
+
+        function updateModalTotal() {
+            if (!currentCustomizingPizza) return;
+
+            // Aggiorna selezioni
+            selectedRemovals = Array.from(document.querySelectorAll('#removeOptions input:checked')).map(cb => cb.value);
+            selectedExtras = Array.from(document.querySelectorAll('#addOptions input:checked')).map(cb => ({
+                id: cb.value,
+                name: cb.dataset.name,
+                price: parseFloat(cb.dataset.price)
+            }));
+
+            // Calcola prezzo
+            let total = currentCustomizingPizza.price;
+            selectedExtras.forEach(extra => total += extra.price);
+
+            document.getElementById('modalTotalPrice').textContent = total.toFixed(2).replace('.', ',') + ' €';
+        }
+
+        function confirmCustomization() {
+            if (!currentCustomizingPizza) return;
+
+            let finalPrice = currentCustomizingPizza.price;
+            let details = [];
+
+            if (selectedRemovals.length > 0) {
+                details.push(`Senza: ${selectedRemovals.join(', ')}`);
+            }
+            if (selectedExtras.length > 0) {
+                selectedExtras.forEach(extra => {
+                    finalPrice += extra.price;
+                    details.push(`Extra: ${extra.name}`);
+                });
+            }
+
+            const itemName = details.length > 0 
+                ? `${currentCustomizingPizza.name} (${details.join('; ')})` 
+                : currentCustomizingPizza.name;
+
+            addToCart(currentCustomizingPizza.id + '_custom', itemName, finalPrice);
+            closeModal();
         }
 
         // --- LOGICA CARRELLO ---
@@ -416,10 +576,17 @@
                 return;
             }
 
-            cartItemsEl.innerHTML = cart.map(item => `
+            cartItemsEl.innerHTML = cart.map(item => {
+                // Estrae dettagli se presenti nel nome (es. "Margherita (Senza: ...)")
+                const nameParts = item.name.split('(');
+                const displayName = nameParts[0];
+                const details = nameParts[1] ? '(' + nameParts[1] : '';
+
+                return `
                 <div class="cart-item">
                     <div class="cart-item-info">
-                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-name">${displayName}</div>
+                        ${details ? `<div class="cart-item-details">${details}</div>` : ''}
                         <div class="cart-item-price">${item.price.toFixed(2).replace('.', ',')} € cad.</div>
                     </div>
                     <div class="cart-item-controls">
@@ -428,7 +595,7 @@
                         <button class="qty-btn" onclick="updateQty('${item.id}', 1)">+</button>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         // --- CHECKOUT E WHATSAPP ---
@@ -486,7 +653,6 @@
             const sidebar = document.getElementById('cartSidebar');
             sidebar.classList.toggle('open');
             
-            // Mostra/nascondi pulsante chiudi solo su mobile
             const closeBtn = document.querySelector('.close-cart-mobile');
             if (window.innerWidth <= 900) {
                 closeBtn.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
